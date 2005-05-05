@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<message_catalog package_key="dotfolio" package_version="0.1d" locale="en_US" charset="ISO-8859-1">
+
+  <msg key="revoke_site_wide_admin">Revoke site-wide administrative privileges.</msg>
+  <msg key="grant_site_wide_admin">Grant site-wide administrative privileges.</msg>
+  <msg key="Username">Username</msg>
+  <msg key="nuke">Nuke</msg>
+  <msg key="help_enter_valid_username">Enter a valid username.  The username will be used to create the dotfolio space.</msg>
+  <msg key="successfully_created_dotfolio">Successfully created a dotfolio space for %username%</msg>
+  <msg key="error_creating_dotfolio">Error creating a dotfolio space for %username%</msg>
+  <msg key="create_a_new_dotfolio">Create a new dotFOLIO</msg>
+  <msg key="select_user_type">Select User Type</msg>
+  <msg key="select_a_user_type">Please select a user type for</msg>
+  <msg key="dotfolio_admin">dotFOLIO Admin</msg>
+  <msg key="create_a_folio_space">Create a folio space</msg>
+  <msg key="add_a_new_user">Add A New User</msg>
+  <msg key="add_a_user">Add A User</msg>
+  <msg key="add_user">Add User</msg>
+  <msg key="admin">Admin</msg>
+  <msg key="username_must_not_be_null">Username must not be null.</msg>
+  <msg key="username_does_not_exist">Username does not exist.</msg>
+  <msg key="id_1">ID</msg>
+  <msg key="name">Name</msg>
+  <msg key="edit">Edit</msg>
+  <msg key="dotfolio_props_for">dotFOLIO properties for this user.</msg>
+  <msg key="email">Email</msg>
+  <msg key="screen_name">Screen name</msg>
+  <msg key="registration_date">Registration date</msg>
+  <msg key="last_visit">Last Visit</msg>
+  <msg key="not_visited">User has not visited yet</msg>
+  <msg key="portrait">Portrait</msg>
+  <msg key="member_state">Member state</msg>
+  <msg key="dotfolio_info">dotFOLIO Information</msg>
+  <msg key="none_set_up">None set up</msg>
+  <msg key="message">Message</msg>
+  <msg key="users">Users</msg>
+  <msg key="user_id_1">User ID</msg>
+  <msg key="general_information">General Information</msg>
+  <msg key="administrative_actions">Administrative Actions</msg>
+  <msg key="update_users_passwd">Update this user's password</msg>
+  <msg key="become_this_user">Become this user</msg>
+  <msg key="update_password">Update Password</msg>
+  <msg key="confirm">Confirm</msg>
+  <msg key="new_password">New Password</msg>
+  <msg key="need_to_confirm">You need to confirm the password that you typed.  (Type the same password again.)</msg>
+  <msg key="passwords_dont_match">Your passwords don't match!  Presumably, you made a typing error while entering one of them.</msg>
+  <msg key="your_password_on_syst">Your password on %system_name%</msg>
+  <msg key="password_url">Please follow the following link to reset your password:
+
+%change_password_url%
+</msg>
+  <msg key="error_sending_email_to">Error sending email to %email% from password-update-2.tcl</msg>
+  <msg key="error_sending_email">Error sending email</msg>
+  <msg key="error_sending_email_2">There was an error sending email to %email%.</msg>
+  <msg key="update">Update</msg>
+  <msg key="create_a_new_user">Create A New User</msg>
+  <msg key="search_users">Search Users</msg>
+  <msg key="bulk_upload">Bulk Upload</msg>
+  <msg key="no_users">No Users</msg>
+  <msg key="adviser_role_pretty_name">Adviser</msg>
+  <msg key="guest_role_pretty_name">Guest</msg>
+  <msg key="owner_role_pretty_name">Owner</msg>
+  <msg key="user">User</msg>
+  <msg key="site_wide_admin">Site-Wide Admin</msg>
+  <msg key="user_type">User Type</msg>
+  <msg key="staff_role_pretty_name">Staff</msg>
+  <msg key="dotfolio_admin_pretty_name">.FOLIO Administration</msg>
+  <msg key="yes">Yes</msg>
+  <msg key="no">No</msg>
+  <msg key="create">Create</msg>
+  <msg key="edit_user">Edit User</msg>
+  <msg key="youve_chosen_to_add">You've chosen to add</msg>
+  <msg key="youve_chosen_to_edit">You've chosen to edit</msg>
+  <msg key="has_been_added_to">has been added to</msg>
+  <msg key="edit_message_and_hit_send">Edit the message below and hit &quot;Send Email&quot; to notify this user.</msg>
+  <msg key="send_email">Send Email</msg>
+  <msg key="email_was_just_sent">The following email was just sent from %system_name%</msg>
+    <msg key="email_was_just_sent_msg">The following email was just sent from %system_name%
+
+Sent by: %email_from%
+Sent to: %email%
+Subject: %subject%
+Message: %message%
+</msg>
+  <msg key="registered_user_welcome_email_body">%first_names% %last_name%,
+
+You have been added as a user to %system_name%
+at %system_url%
+
+Login information:
+Email %email%
+Password: %password%
+
+(you may change your password after you log in)
+
+Thank you
+%administration_name%
+  </msg>
+  <msg key="subject_membership_has_been_approved">Your %system_name% membership has been approved.</msg>
+  <msg key="message_membership_has_been_approved">Your %system_name% membership has been approved.  Please return to %system_url% to log into %system_name%.</msg>
+  <msg key="has_dotfolio_space">dotFOLIO Space</msg>
+  <msg key="default_welcome_note">{Welcome to %first_names% %last_name%'s portfolio!} text/enhanced</msg>
+  <msg key="num_of_blog_entries">No. of Blog Entries</msg>
+
+</message_catalog>

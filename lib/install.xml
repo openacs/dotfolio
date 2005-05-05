@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<application name="dotfolio" pretty-name="dotfolio" home="http://www.weg.ee.usyd.edu.au/projects/dotfolio" min_stack_size="512">
+
+<actions>
+  <install package="lars-blogger"/>
+  <install package="file-storage"/>
+  <install package="wp-slim"/>>
+
+  <mount package="acs-subsite" mount-point="$base_url" instance-name="$name"/>
+  <set-parameter url="$base_url" name="IndexInternalRedirectUrl" value="/packages/dotfolio-ui/lib/index"/>"
+  <set-parameter url="$base_url" name="DefaultMaster" value="/packages/dotfolio-ui/lib/dotfolio-master"/>
+
+  <mount package="lars-blogger" mount-point="$blog_url" instance-name="Blog"/>
+  <set-parameter url="$blog_url" name="CategoryContainer" value="subsite_id"/>
+
+  <mount package="file-storage" mount-point="$files_url" instance-name="Files"/>
+
+  <mount package="dotfolio-ui" mount-point="$organise_url" instance-name="Organise"/>
+
+</actions>
+
+</application>
