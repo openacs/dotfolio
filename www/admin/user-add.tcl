@@ -35,5 +35,5 @@ set current_user_id [ad_maybe_redirect_for_registration]
 dotfolio::require_admin
 set context_bar [list [list users [_ dotfolio.users]] [_ dotfolio.add_user]]
 
-# Export dotlrn-specific vars in the next_url
+# Export dotfolio-specific vars in the next_url
 set next_url [export_vars -base user-add-2 {type referer}]

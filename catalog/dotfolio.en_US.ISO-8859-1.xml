@@ -5,6 +5,7 @@
   <msg key="grant_site_wide_admin">Grant site-wide administrative privileges.</msg>
   <msg key="Username">Username</msg>
   <msg key="nuke">Nuke</msg>
+  <msg key="user_add_confirm_email_subject">You have been added as a user to %system_name% at %system_url%</msg>
   <msg key="help_enter_valid_username">Enter a valid username.  The username will be used to create the dotfolio space.</msg>
   <msg key="successfully_created_dotfolio">Successfully created a dotfolio space for %username%</msg>
   <msg key="error_creating_dotfolio">Error creating a dotfolio space for %username%</msg>
