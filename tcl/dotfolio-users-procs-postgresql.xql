@@ -24,4 +24,12 @@
     </querytext>
   </fullquery>
 
+  <fullquery name="dotfolio::user::html_list_of_advisers.select_advisers">
+    <querytext>
+      SELECT last_name || ', ' || first_names AS adviser_name,
+          user_id AS adviser_id
+	  FROM dotfolio_users WHERE type = 'adviser'
+    </querytext>
+  </fullquery>
+
 </queryset>

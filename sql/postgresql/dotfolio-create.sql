@@ -166,3 +166,4 @@ end;
 
 \i users-create.sql
 \i dotfolio-identification-create.sql
+\i dotfolio-groups-create.sql

@@ -92,4 +92,35 @@ namespace eval dotfolio::user {
 	return 0
     }
 
+    ad_proc html_list_of_advisers {} {
+
+        Returns a list of advisers formatted for an HTML form
+	SELECT control.
+
+	@return Returns a list of advisers formatted for an HTML form
+	SELECT control.  Otherwise if there are no advisers on record,
+	then a link to the user admin page will be returned instead.
+    } {
+	set list_of_advisers "<SELECT NAME=\"adviser_id\">"
+	append list_of_advisers "<OPTION SELECTED>#dotfolio.select_adviser#</OPTION>"
+
+	db_foreach select_advisers {} {
+
+	    append list_of_advisers "<OPTION VALUE=\"$adviser_id\">$adviser_name</OPTION>"
+
+	} if_no_rows {
+	    set list_of_advisers ""
+	}
+
+	# If no rows were returned, then return a link
+	# to user admin instead.
+	if { [empty_string_p $list_of_advisers] } {
+	    set list_of_advisers "<a class=\"button\" href=\"/dotfolio/admin/users\">#dotfolio.create_adviser#</a>"
+	} else {
+	    append list_of_advisers "</SELECT>"
+	}
+
+	return $list_of_advisers
+    }
+
 }

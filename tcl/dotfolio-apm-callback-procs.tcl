@@ -11,7 +11,7 @@ namespace eval dotfolio::install {
 
     ad_proc -public after_install {
     } {
-        Configure kernel to use usernames instead of email for logins.
+        Configures kernel to use usernames instead of email for logins.
 	dotfolio relies on usernames to create portfolio spaces for users.
 	
 	@return 

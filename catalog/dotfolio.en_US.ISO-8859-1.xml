@@ -4,6 +4,13 @@
   <msg key="revoke_site_wide_admin">Revoke site-wide administrative privileges.</msg>
   <msg key="grant_site_wide_admin">Grant site-wide administrative privileges.</msg>
   <msg key="Username">Username</msg>
+  <msg key="groups">Groups</msg>
+  <msg key="delete">Delete</msg>
+  <msg key="select_adviser">Select adviser...</msg>
+  <msg key="create_group">Create Group</msg>
+  <msg key="create_adviser">Create Adviser</msg>
+  <msg key="group_name">Group Name</msg>
+  <msg key="no_groups_created">No groups have been created.</msg>
   <msg key="nuke">Nuke</msg>
   <msg key="user_add_confirm_email_subject">You have been added as a user to %system_name% at %system_url%</msg>
   <msg key="help_enter_valid_username">Enter a valid username.  The username will be used to create the dotfolio space.</msg>

@@ -23,3 +23,4 @@
 
 \i users-drop.sql
 \i dotfolio-identification-drop.sql
+\i dotfolio-groups-drop.sql
