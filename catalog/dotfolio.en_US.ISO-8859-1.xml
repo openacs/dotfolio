@@ -5,6 +5,8 @@
   <msg key="grant_site_wide_admin">Grant site-wide administrative privileges.</msg>
   <msg key="Username">Username</msg>
   <msg key="groups">Groups</msg>
+  <msg key="group_members_curly">{Group Members}</msg>
+  <msg key="group_members">Group Members</msg>
   <msg key="delete">Delete</msg>
   <msg key="select_adviser">Select adviser...</msg>
   <msg key="create_group">Create Group</msg>
