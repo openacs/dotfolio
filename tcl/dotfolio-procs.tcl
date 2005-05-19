@@ -212,4 +212,15 @@ namespace eval dotfolio {
 	return "dotfolio_${type}_profile_rel"
     }
 
+    ad_proc has_dotfolio_p {
+        -user_id
+    } {
+        Returns 1 if the specified user has a dotfolio.
+	Otherwise returns 0.
+
+	@param user_id A user's user_id.
+    } {
+        return [db_string has_dotfolio {} -default 0]
+    }
+
 }

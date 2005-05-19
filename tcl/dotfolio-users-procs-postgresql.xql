@@ -32,4 +32,20 @@
     </querytext>
   </fullquery>
 
+  <fullquery name="dotfolio::user::adviser_p.adviser_p">
+    <querytext>
+      SELECT adviser_id FROM dotfolio_group_adviser_map
+          WHERE adviser_id = :user_id GROUP BY adviser_id
+    </querytext>
+  </fullquery>
+
+  <fullquery name="dotfolio::user::dotfolio_url.dotfolio_url">
+    <querytext>
+      SELECT site_node__url(d.node_id) AS url
+          FROM dotfolio_users du LEFT OUTER JOIN dotfolios d
+	  ON du.user_id = d.owner_id
+	      WHERE du.type = 'owner' AND du.user_id = :user_id
+    </querytext>
+  </fullquery>
+
 </queryset>

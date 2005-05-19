@@ -32,4 +32,9 @@
     </querytext>
   </fullquery>  
 
+  <fullquery name="dotfolio::has_dotfolio_p.has_dotfolio">
+    <querytext>
+      SELECT dotfolio__has_p(:user_id) AS has_dotfolio_p
+    </querytext>
+  </fullquery>  
 </queryset>

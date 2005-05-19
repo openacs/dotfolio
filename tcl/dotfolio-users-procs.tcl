@@ -123,4 +123,26 @@ namespace eval dotfolio::user {
 	return $list_of_advisers
     }
 
+    ad_proc adviser_p {
+        user_id
+    } {
+        Returns 1 if the specified user_id is an adviser.
+	Otherwise returns 0.
+
+	@param user_id A user's user_id.
+    } {
+        return [db_0or1row adviser_p {}]
+    }
+
+    ad_proc dotfolio_url {
+        -user_id
+    } {
+	Returns the url of the user's dotfolio.
+
+	@param user_id A user's user_id.
+	@return Returns the url of the user's dotfolio
+    } {
+        return [db_string dotfolio_url {} -default ""]
+    }
+
 }

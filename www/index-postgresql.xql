@@ -17,6 +17,9 @@
       FROM dotfolio_users du LEFT OUTER JOIN dotfolios d
       ON du.user_id = d.owner_id
       WHERE du.type = 'owner'
+      AND du.user_id IN (SELECT member_id FROM group_member_map g,
+          dotfolio_group_adviser_map m
+	  WHERE m.adviser_id = :user_id and m.group_id = g.group_id)
       [template::list::orderby_clause -orderby -name "portfolios"]
     </querytext>
   </fullquery>

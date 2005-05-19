@@ -7,12 +7,16 @@
   <msg key="groups">Groups</msg>
   <msg key="group_members_curly">{Group Members}</msg>
   <msg key="group_members">Group Members</msg>
+  <msg key="no_members_added_to_group">No members have been added to this group.</msg>
   <msg key="delete">Delete</msg>
   <msg key="select_adviser">Select adviser...</msg>
   <msg key="create_group">Create Group</msg>
   <msg key="create_adviser">Create Adviser</msg>
   <msg key="group_name">Group Name</msg>
   <msg key="no_groups_created">No groups have been created.</msg>
+  <msg key="group_members_admin">Group Members (Admin)</msg>
+  <msg key="members_of_group">Members of group: %group_name%</msg>
+  <msg key="non_members_that_can_be_added">Non-members that can be added to group: %group_name%</msg>
   <msg key="nuke">Nuke</msg>
   <msg key="user_add_confirm_email_subject">You have been added as a user to %system_name% at %system_url%</msg>
   <msg key="help_enter_valid_username">Enter a valid username.  The username will be used to create the dotfolio space.</msg>
@@ -70,6 +74,7 @@
   <msg key="adviser_role_pretty_name">Adviser</msg>
   <msg key="guest_role_pretty_name">Guest</msg>
   <msg key="owner_role_pretty_name">Owner</msg>
+  <msg key="role_type">Role Type</msg>
   <msg key="user">User</msg>
   <msg key="site_wide_admin">Site-Wide Admin</msg>
   <msg key="user_type">User Type</msg>

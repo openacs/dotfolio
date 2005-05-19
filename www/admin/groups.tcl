@@ -25,7 +25,10 @@ template::list::create \
 	group_name {
 	    label "#dotfolio.group_name#"
 	    display_template {
-		@groups.group_name;noquote@
+		<if @groups.rownum@ ne @groups:rowcount@>
+		<a href=\"group-members?group_id=@groups.group_id@\">@groups.group_name;noquote@</a>
+		</if>
+		<else>@groups.group_name;noquote@</else>
 	    }
 	}
 	adviser {

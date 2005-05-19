@@ -22,6 +22,23 @@ if {![dotfolio::user_p -user_id $user_id]} {
 
 set root_object_id [acs_magic_object security_context_root]
 
+set adviser_p [dotfolio::user::adviser_p $user_id]
+ns_log Warning "NC: adviser_p $adviser_p"
+
+# If user is not adviser then do some redirection.
+if {!$adviser_p} {
+
+    # If user has a dotfolio, then redirect to the location of the dotfolio.
+    # Otherwise redirect user back to index with message.
+    if {[dotfolio::has_dotfolio_p -user_id $user_id]} {
+	ad_returnredirect [dotfolio::user::dotfolio_url -user_id $user_id]
+    } else {
+	# TODO - user must be guest so display dotfolios that
+	# guest has access to.
+	ad_returnredirect -message "You do not have the permissions to access dotfolio." index
+    }
+}
+
 set elements {
     name {
 	label {\#dotfolio.name\#}
