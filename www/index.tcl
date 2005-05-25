@@ -35,7 +35,7 @@ if {!$adviser_p} {
     } else {
 	# TODO - user must be guest so display dotfolios that
 	# guest has access to.
-	ad_returnredirect -message "You do not have the permissions to access dotfolio." index
+	ad_returnredirect -message "You do not have the permissions to access dotfolio." /
     }
 }
 
