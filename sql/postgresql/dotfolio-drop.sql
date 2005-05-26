@@ -21,6 +21,10 @@
 -- @version $Id$
 --
 
+drop function dotfolio__adviser_p (integer);
+drop function dotfolio__has_p (integer);
+drop function dotfolio__name (integer);
+
 \i users-drop.sql
 \i dotfolio-identification-drop.sql
 \i dotfolio-groups-drop.sql

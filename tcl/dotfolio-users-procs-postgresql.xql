@@ -34,8 +34,7 @@
 
   <fullquery name="dotfolio::user::adviser_p.adviser_p">
     <querytext>
-      SELECT adviser_id FROM dotfolio_group_adviser_map
-          WHERE adviser_id = :user_id GROUP BY adviser_id
+      SELECT dotfolio__adviser_p (:user_id)
     </querytext>
   </fullquery>
 

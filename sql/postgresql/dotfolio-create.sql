@@ -164,6 +164,27 @@ end;
 ' language 'plpgsql';
 
 
+select define_function_args('dotfolio__adviser_p','user_id');
+
+create function dotfolio__adviser_p (integer) returns bool as '
+declare
+    p_user_id	          alias for $1;
+    v_adviser_p	          integer;
+begin
+    SELECT count(user_id) INTO v_adviser_p
+        FROM dotfolio_users
+        WHERE user_id = p_user_id
+	AND type = ''adviser'';
+
+    if v_adviser_p <> 0 then
+        return ''t'';
+    else
+        return ''f'';
+    end if;
+end;
+' language 'plpgsql';
+
+
 \i users-create.sql
 \i dotfolio-identification-create.sql
 \i dotfolio-groups-create.sql
