@@ -1,5 +1,5 @@
 #
-#  Copyright (C) 2001, 2002 WEG
+#  Copyright (C) 2005 WEG
 #
 #  This file is part of dotFOLIO.
 #

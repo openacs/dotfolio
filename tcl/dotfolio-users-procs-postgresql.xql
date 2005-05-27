@@ -47,4 +47,10 @@
     </querytext>
   </fullquery>
 
+  <fullquery name="dotfolio::user::get_user_id_from_username.select_user_id">
+    <querytext>
+      SELECT user_id FROM dotfolio_users WHERE username = :username
+    </querytext>
+  </fullquery>
+
 </queryset>

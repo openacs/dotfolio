@@ -145,4 +145,17 @@ namespace eval dotfolio::user {
         return [db_string dotfolio_url {} -default ""]
     }
 
+    ad_proc get_user_id_from_username {
+        -username
+    } {
+	Returns the user_id for the user with the specified username.
+	Otherwise an empty string is returned.
+
+	@param username The username for a user.
+	@return Returns the user_id for the user that matches the given
+	username.
+    } {
+        return [db_string select_user_id {} -default ""]
+    }
+
 }

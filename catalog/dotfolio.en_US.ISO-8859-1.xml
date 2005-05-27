@@ -16,9 +16,13 @@
   <msg key="no_groups_created">No groups have been created.</msg>
   <msg key="group_members_admin">Group Members (Admin)</msg>
   <msg key="members_of_group">Members of group: %group_name%</msg>
+  <msg key="creating_dotfolio_site">Creating dotFOLIO site for</msg>
   <msg key="non_members_that_can_be_added">Non-members that can be added to group: %group_name%</msg>
   <msg key="nuke">Nuke</msg>
   <msg key="user_add_confirm_email_subject">You have been added as a user to %system_name% at %system_url%</msg>
+  <msg key="user_add_confirm_email_body">You have been added as a user to %system_name% at %system_url%.
+            Login: %user_email%
+            Password: %user_password%</msg>
   <msg key="help_enter_valid_username">Enter a valid username.  The username will be used to create the dotfolio space.</msg>
   <msg key="successfully_created_dotfolio">Successfully created a dotfolio space for %username%</msg>
   <msg key="error_creating_dotfolio">Error creating a dotfolio space for %username%</msg>
@@ -38,6 +42,9 @@
   <msg key="edit">Edit</msg>
   <msg key="dotfolio_props_for">dotFOLIO properties for this user.</msg>
   <msg key="email">Email</msg>
+  <msg key="return_to">Return to</msg>
+  <msg key="some_of_the_emails_failed">Some of the emails failed. Those users had random passwords generated for them, however. The best way to proceed is to have these users log in and ask them to click on 'I have forgotten my password'.</msg>
+  <msg key="database_choked">&lt;p&gt;Database error while trying to create the last user in the list above!&lt;br&gt; The transaction has been aborted, no users have been entered, and no e-mail notifications have been sent.&lt;p&gt;</msg>
   <msg key="screen_name">Screen name</msg>
   <msg key="registration_date">Registration date</msg>
   <msg key="last_visit">Last Visit</msg>
@@ -49,6 +56,7 @@
   <msg key="message">Message</msg>
   <msg key="users">Users</msg>
   <msg key="user_id_1">User ID</msg>
+  <msg key="user_management">User Management</msg>
   <msg key="general_information">General Information</msg>
   <msg key="administrative_actions">Administrative Actions</msg>
   <msg key="update_users_passwd">Update this user's password</msg>
@@ -64,13 +72,31 @@
 %change_password_url%
 </msg>
   <msg key="error_sending_email_to">Error sending email to %email% from password-update-2.tcl</msg>
+  <msg key="emailing_this_user_failed">emailing this user failed!</msg>
   <msg key="error_sending_email">Error sending email</msg>
   <msg key="error_sending_email_2">There was an error sending email to %email%.</msg>
   <msg key="update">Update</msg>
+  <msg key="creating_user">Creating user</msg>
   <msg key="create_a_new_user">Create A New User</msg>
   <msg key="search_users">Search Users</msg>
   <msg key="bulk_upload">Bulk Upload</msg>
+  <msg key="bulk_uploading">Bulk uploading in progress.</msg>
+  <msg key="upload">Upload</msg>
+  <msg key="user_username_created">User %user_username% created....</msg>
+  <msg key="user_username_already_exists">User %user_username% already exists... storing user_id</msg>
+  <msg key="csv_file_must_include">&lt;p&gt;CSV file must include at least the first_names, last_name, email, username, and type fields.  The password field is optional.&lt;p&gt;</msg>
+  <msg key="example_file">Example File</msg>
+  <msg key="create_several_users_at_once">Here you can create several users at once using a correctly formatted CSV (comma-separated values) file.  You can create a spreadsheet and save it as a CSV file to import here.</msg>
+  <msg key="use_valid_email_address">Be sure to use valid email addresses since the process will send the new user's password to the given email address.</msg>
   <msg key="no_users">No Users</msg>
+  <msg key="fields">Fields</msg>
+  <msg key="required">Required</msg>
+  <msg key="upload_formatted_csv">Upload Formatted CSV File</msg>
+  <msg key="optional_defaults_to_random_value">Optional field that defaults to the following value: random value</msg>
+  <msg key="must_have_values">Field must have one of the following values:</msg>
+  <msg key="csv_file_format">CSV File Format</msg>
+  <msg key="first_line">First Line</msg>
+  <msg key="first_line_of_file_must_be">The first line of the file must have the following header line:</msg>
   <msg key="adviser_role_pretty_name">Adviser</msg>
   <msg key="guest_role_pretty_name">Guest</msg>
   <msg key="owner_role_pretty_name">Owner</msg>
