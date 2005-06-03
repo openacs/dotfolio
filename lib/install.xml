@@ -5,7 +5,6 @@
 <actions>
   <install package="lars-blogger"/>
   <install package="file-storage"/>
-  <install package="wp-slim"/>>
 
   <mount package="acs-subsite" mount-point="$base_url" instance-name="$name"/>
   <set-parameter url="$base_url" name="IndexInternalRedirectUrl" value="/packages/dotfolio-ui/lib/index"/>"
