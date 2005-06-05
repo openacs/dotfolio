@@ -55,7 +55,7 @@ ad_form -name add_user -export {referer user_id} -form {
     set email_from [ad_parameter -package_id [ad_acs_kernel_id] SystemOwner]
 
     # Add the user as a dotfolio user.
-    dotfolio::user_add -id $id -type $type -user_id $user_id
+    dotfolio::user::add -id $id -type $type -user_id $user_id
 
     # If the user is of type "owner", then create a dotfolio space for
     # the user.

@@ -52,10 +52,10 @@ ad_form -name edit_user -export {referer user_id} -form {
 
     db_transaction {
 	# remove the user
-	dotfolio::user_remove -user_id $user_id
+	dotfolio::user::remove -user_id $user_id
 
 	# add the user
-	dotfolio::user_add -id $id -type $type -user_id $user_id
+	dotfolio::user::add -id $id -type $type -user_id $user_id
     }
 
 } -after_submit {

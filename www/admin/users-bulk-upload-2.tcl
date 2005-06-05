@@ -98,7 +98,7 @@ db_transaction {
             doc_body_append "[_ dotfolio.creating_user] $row(username)...."
 
             # Now we make them a dotFOLIO user
-	    dotfolio::user_add -user_id $user_id -id $row(username) -type $row(type)
+	    dotfolio::user::add -user_id $user_id -id $row(username) -type $row(type)
 
 	    # If user is an owner, then create a dotfolio site using their
 	    # username.

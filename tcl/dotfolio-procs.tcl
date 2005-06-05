@@ -121,7 +121,7 @@ namespace eval dotfolio {
 	    set group_id [application_group::group_id_from_package_id \
 			      -package_id $package_id]
 	    group::add_member -group_id $group_id -user_id $owner_id \
-		-rel_type "admin_rel"
+		-rel_type "membership_rel"
 
 	    # Give dotfolio owner admin permission for their blog.
 	    array set blog_node_info [site_node::get -url $blog_url]

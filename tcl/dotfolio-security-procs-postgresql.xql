@@ -30,12 +30,4 @@
     </querytext>
   </fullquery>
 
-  <fullquery name="dotfolio::user_remove.select_rel_id">
-    <querytext>
-      SELECT rel_id
-          FROM dotfolio_users
-	  WHERE user_id = :user_id                                            
-    </querytext>
-  </fullquery>
-
 </queryset>

@@ -22,7 +22,7 @@ ad_library {
     @version $Id$
 }
 
-namespace eval dotfolio {
+namespace eval dotfolio::security {
 
     ad_proc -private do_abort {} {
         Do an abort if security violation
@@ -83,49 +83,4 @@ namespace eval dotfolio {
         return $localized_list
     }
 
-    ad_proc -public user_add {
-	{-type owner}
-	{-id ""}
-	{-user_id:required}
-    } {
-	Add a user as a dotfolio user.
-    } {
-	# Check if the user is already a dotfolio user
-	if {[user_p -user_id $user_id]} {
-	    return
-	}
-
-	# Set default ID to email address
-	if {[empty_string_p $id]} {
-	    set id [cc_email_from_party $user_id]
-	}
-
-	# set up extra vars
-	set extra_vars [ns_set create]
-	ns_set put $extra_vars user_id $user_id
-	ns_set put $extra_vars id $id
-
-	# Add the relation (no need for object_id_one or two).
-	set rel_id [relation_add \
-	    -extra_vars $extra_vars \
-	    -member_state approved \
-	    [get_rel_type_from_user_type -type $type] \
-	    "" \
-            $user_id \
-        ]
-
-	return $rel_id
-    }
-
-    ad_proc -public user_remove {
-        {-user_id:required}
-    } {
-        Remove a user from the set of dotFOLIO users
-    } {
-        set rel_id [db_string select_rel_id {} -default ""]
-
-        if {![empty_string_p $rel_id]} {
-            relation_remove $rel_id
-        }
-    }
 }
