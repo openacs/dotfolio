@@ -178,7 +178,7 @@ namespace eval dotfolio::user {
 	Add a user as a dotfolio user.
     } {
 	# Check if the user is already a dotfolio user
-	if {[user_p -user_id $user_id]} {
+	if {[dotfolio::user_p -user_id $user_id]} {
 	    return
 	}
 
@@ -196,7 +196,7 @@ namespace eval dotfolio::user {
 	set rel_id [relation_add \
 	    -extra_vars $extra_vars \
 	    -member_state approved \
-	    [get_rel_type_from_user_type -type $type] \
+	    [dotfolio::get_rel_type_from_user_type -type $type] \
 	    "" \
             $user_id \
         ]

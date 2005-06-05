@@ -123,6 +123,11 @@ namespace eval dotfolio {
 	    group::add_member -group_id $group_id -user_id $owner_id \
 		-rel_type "membership_rel"
 
+	    # Grant the owner write permissions for their dotfolio.
+	    permission::grant -party_id $owner_id \
+		-object_id $package_id \
+		-privilege "write"
+
 	    # Give dotfolio owner admin permission for their blog.
 	    array set blog_node_info [site_node::get -url $blog_url]
 	    set blog_id $blog_node_info(object_id)

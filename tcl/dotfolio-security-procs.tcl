@@ -22,7 +22,7 @@ ad_library {
     @version $Id$
 }
 
-namespace eval dotfolio::security {
+namespace eval dotfolio {
 
     ad_proc -private do_abort {} {
         Do an abort if security violation
