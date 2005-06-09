@@ -20,7 +20,6 @@
         <requires url="acs-kernel" version="5.2.0d2"/>
 	<requires url="lars-blogger" version="2.1.1"/>
 	<requires url="file-storage" version="5.1.0a15"/>
-	<requires url="wp-slim" version="5.2.1d"/>
         <requires url="user-profile" version="2.1.0a2"/>
 	<requires url="related-items" version="0.1d"/>
 	<requires url="clipboard" version="0.1d"/>
