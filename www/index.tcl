@@ -23,7 +23,6 @@ if {![dotfolio::user_p -user_id $user_id]} {
 set root_object_id [acs_magic_object security_context_root]
 
 set adviser_p [dotfolio::user::adviser_p $user_id]
-ns_log Warning "NC: adviser_p $adviser_p"
 
 # If user is not adviser then do some redirection.
 if {!$adviser_p} {
