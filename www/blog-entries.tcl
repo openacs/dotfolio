@@ -13,6 +13,9 @@ ad_page_contract {
 
 set user_id [auth::require_login]
 
+set dotfolioCSS [parameter::get_from_package_key -parameter "DotfolioCSS" \
+                     -package_key "dotfolio"]
+
 set elements {
     title {
 	label {Title}

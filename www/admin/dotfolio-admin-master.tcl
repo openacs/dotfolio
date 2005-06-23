@@ -15,13 +15,17 @@
 #
 
 ad_page_contract {
-    Displays main dotFOLIO admin page
+    Master template for dotfolio admin.
 
     @author Nick Carroll (ncarroll@ee.usyd.edu.au)
     @creation-date 2005-01-01
     @version $Id$
 }
 
-set context_bar {}
+#Pages in this directory are only runnable by dotfolio-wide admins.
+dotfolio::require_admin
+
+set dotfolioCSS [parameter::get_from_package_key -parameter "DotfolioCSS" \
+                     -package_key "dotfolio"]
 
 ad_return_template

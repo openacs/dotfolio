@@ -31,7 +31,7 @@
     <else><if @context_bar@ not nil><property name="context">@context_bar;noquote@</property></if></else>
   <if @doc_type@ not nil><property name="doc_type">@doc_type;noquote@</property></if>
   <property name="header_stuff">
-    <link rel="stylesheet" type="text/css" href="/resources/dotfolio-ui/dotfolio-grey.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="@dotfolioCSS@" media="all"/>
 <style type="text/css">
 /* Re-enable the breadcrumb bar -- useful for site-wide admins */
 #breadcrumbs {

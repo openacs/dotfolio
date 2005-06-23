@@ -70,4 +70,7 @@ db_multirow -extend {dotfolio_url blog_entries_url} portfolios portfolios {} {
     set blog_entries_url [export_vars -url -base {blog-entries} {owner_id url}]
 }
 
+set dotfolioCSS [parameter::get_from_package_key -parameter "DotfolioCSS" \
+                     -package_key "dotfolio"]
+
 ad_return_template

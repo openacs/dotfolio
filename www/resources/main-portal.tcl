@@ -29,3 +29,8 @@ if { ![info exists options] } {
 set package_id [ad_conn package_id]
 
 set admin_p [ad_permission_p $package_id admin]
+
+set dotfolioCSS [parameter::get_from_package_key -parameter "DotfolioCSS" \
+                     -package_key "dotfolio"]
+
+ad_return_template

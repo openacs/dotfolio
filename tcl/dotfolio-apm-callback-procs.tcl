@@ -21,6 +21,11 @@ namespace eval dotfolio::install {
 	parameter::set_from_package_key -package_key "acs-kernel" \
 	                                -parameter "UseEmailForLoginP" \
 	                                -value "0"
+
+	# Do not allow self-register
+	parameter::set_from_package_key -package_key "acs-authentication" \
+	    -parameter "AllowSelfRegister" \
+	    -value "0"
     }
 
 }
