@@ -48,6 +48,18 @@ namespace eval dotfolio {
 	return [util_memoize [list dotfolio::packages_no_mem -node_id $subsite_node_id] 1200]
     }
 
+    ad_proc -private group_id_from_user_type {
+	{-user_type:required}
+    } {
+	Retrieves the group_id for the specific user_type.  user_type can
+	be one of the following: admin, adviser, owner, or guest.
+	
+	@param user_type The user_type that we would like the group_id for.
+	@return Returns the group_id for the specified user_type.
+    } {
+	return [db_string get_group_id {} -default ""]
+    }
+
     ad_proc -public create_dotfolio_for_user {
 	{-username:required}
     } {
@@ -134,6 +146,16 @@ namespace eval dotfolio {
 	    permission::grant -party_id $owner_id -object_id $blog_id \
 		-privilege "admin"
 
+	    set adviser_group_id [group_id_from_user_type -user_type "adviser"]
+
+	    # Grant advisers permission to add comments to blog entries.
+	    permission::grant -party_id $adviser_group_id -object_id $blog_id \
+		-privilege "general_comments_create"
+
+	    # Revoke permission for unregistered visitors to comment.
+	    permission::revoke -party_id 0 -object_id $blog_id \
+		-privilege "general_comments_create"
+
 	    # Give dotfolio owner write and delete permissions for their files.
 	    array set files_node_info [site_node::get -url $files_url]
 	    set files_id $files_node_info(object_id)
@@ -141,7 +163,17 @@ namespace eval dotfolio {
 		-privilege "write"
 	    permission::grant -party_id $owner_id -object_id $files_id \
 		-privilege "delete"
-    
+
+	    # Do not let organiser node inherit permisisons.  Only the
+	    # owner should have access to the organise tab.
+	    set organise_node_id [site_node::get_node_id -url $organise_url]
+	    array set organise_node_info \
+		[site_node::get -node_id $organise_node_id]
+	    set organise_id $organise_node_info(package_id)
+	    permission::set_not_inherit -object_id $organise_id
+	    permission::grant -party_id $owner_id -object_id $organise_id \
+		-privilege "admin"
+
 	    db_exec_plsql create_dotfolio {}
 
 	    # Set success flag to 1 to reflect successful creation of
@@ -220,12 +252,142 @@ namespace eval dotfolio {
     ad_proc has_dotfolio_p {
         -user_id
     } {
-        Returns 1 if the specified user has a dotfolio.
-	Otherwise returns 0.
+        Returns t if the specified user has a dotfolio.
+	Otherwise returns f.
 
 	@param user_id A user's user_id.
     } {
-        return [db_string has_dotfolio {} -default 0]
+        return [db_string has_dotfolio {} -default f]
+    }
+
+    ad_proc object_type_pretty_name {
+        -object_id
+    } {
+	Returns the object type pretty name for the specified object.
+
+	@param object_id The ID for a specific object.
+    } {
+        return [db_string pretty_name {} -default ""]
+    }
+
+    ad_proc dimensional {
+        {-no_header:boolean}
+        {-no_bars:boolean}
+        {-link_all 0}
+        {-names_in_cells_p 1}
+        {-th_bgcolor ""}
+        {-td_align "center"}
+        {-extra_td_html ""}
+        {-table_html_args "border=0 cellspacing=0 cellpadding=3 width=100%"}
+	{-class_html ""}
+        {-pre_html ""}
+        {-post_html ""}
+	{-extra_td_selected_p 0}
+        option_list
+        {url {}}
+        {options_set ""}
+        {optionstype url}
+    } {
+        An enhanced ad_dimensional. see that proc for usage details.  This proc
+	was taken from new-portal.
+    } {
+        if {[empty_string_p $option_list]} {
+            return
+        }
+	
+        if {[empty_string_p $options_set]} {
+            set options_set [ns_getform]
+        }
+	
+        if {[empty_string_p $url]} {
+            set url [ad_conn url]
+        }
+	
+        set html "\n<table $table_html_args>\n"
+	
+        if {!$no_header_p} {
+            foreach option $option_list {
+                append html "<tr>    <th bgcolor=\"$th_bgcolor\">[lindex $option 1]</th>\n"
+            }
+        }
+    
+        append html "  <tr>\n"
+	
+        foreach option $option_list {
+	    
+            if {!$no_bars_p} {
+                append html "\["
+            }
+	    
+	    
+	    if { $names_in_cells_p } {
+		set pre_td_html "<td class=\"dimension-section\">"
+		set pre_selected_td_html "<td class=\"dimension-section-selected\">"
+		set post_html "$post_html</a></td>"
+		set end_html ""
+		set break_html ""
+		set post_selected_html "$post_html"
+	    } else {
+		append html "    <td align=$td_align>"
+		set td_html ""
+		set pre_selected_td_html "<strong>"
+		set post_selected_html "</strong>$post_html"
+		set end_html ""
+		set td_html ""
+		post_html "$post_html</a>"
+		if {!$no_bars_p} {
+		    set break_html " | "
+		} else {
+		    append break_html " &nbsp; "
+		}
+	    }
+
+            # find out what the current option value is.
+            # check if a default is set otherwise the first value is used
+            set option_key [lindex $option 0]
+            set option_val [lindex $option 2]
+            if {![empty_string_p $options_set]} {
+                set options_set_val [ns_set get $options_set $option_key]
+                if { ![empty_string_p $options_set_val] } {
+                    set option_val $options_set_val
+                }
+            }
+	    
+            set first_p 1
+            foreach option_value [lindex $option 3] {
+                set thisoption_name [lindex $option_value 0]
+                # We allow portal page names to have embedded message catalog keys
+                # that we localize on the fly
+                set thisoption_value [ad_quotehtml [lang::util::localize [lindex $option_value 1]]]
+                set thisoption_link_p 1
+                if {[llength $option_value] > 3} {
+                    set thisoption_link_p [lindex $option_value 3]
+                }
+
+                if {$first_p} {
+                    set first_p 0
+		} else {
+		    append html $break_html
+                }
+		
+                if {([string equal $option_val $thisoption_name] == 1 && !$link_all) || !$thisoption_link_p} {
+                    append html "${pre_selected_td_html}${pre_html}${thisoption_value}${post_selected_html}\n"
+                } else {
+                    append html "${pre_td_html}<a href=\"$url?[export_ns_set_vars url $option_key $options_set]&[ns_urlencode $option_key]=[ns_urlencode $thisoption_name]\">${pre_html}${thisoption_value}${post_html}\n"
+                }
+            }
+
+            if {!$no_bars_p} {
+                append html "\]"
+            }
+	    if {$extra_td_selected_p} {
+		append html "${pre_selected_td_html}${pre_html}$extra_td_html${post_html}\n"
+	    } else {
+		append html "${pre_td_html}$extra_td_html${post_html}\n"
+	    }
+        }
+
+        append html "  </tr>\n$end_html</table>\n"
     }
 
 }

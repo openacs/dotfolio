@@ -112,7 +112,7 @@ db_transaction {
 
             set msg_subst_list [list system_name [ad_system_name] \
                                      system_url [ad_parameter -package_id [ad_acs_kernel_id] SystemURL] \
-                                     user_email $row(email) \
+                                     user_username $row(username) \
                                      user_password $password]
             set message [_ dotfolio.user_add_confirm_email_body \
 			     $msg_subst_list]

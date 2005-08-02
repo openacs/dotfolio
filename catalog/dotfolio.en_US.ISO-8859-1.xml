@@ -9,10 +9,12 @@
   <msg key="group_members">Group Members</msg>
   <msg key="no_members_added_to_group">No members have been added to this group.</msg>
   <msg key="delete">Delete</msg>
+  <msg key="directory">Directory</msg>
   <msg key="select_adviser">Select adviser...</msg>
   <msg key="create_group">Create Group</msg>
   <msg key="create_adviser">Create Adviser</msg>
   <msg key="group_name">Group Name</msg>
+  <msg key="directory_listing_of_eportfolios">Directory listing of e-Portfolio owners</msg>
   <msg key="no_groups_created">No groups have been created.</msg>
   <msg key="group_members_admin">Group Members (Admin)</msg>
   <msg key="members_of_group">Members of group: %group_name%</msg>
@@ -20,9 +22,14 @@
   <msg key="non_members_that_can_be_added">Non-members that can be added to group: %group_name%</msg>
   <msg key="nuke">Nuke</msg>
   <msg key="user_add_confirm_email_subject">You have been added as a user to %system_name% at %system_url%</msg>
-  <msg key="user_add_confirm_email_body">You have been added as a user to %system_name% at %system_url%.
-            Login: %user_email%
-            Password: %user_password%</msg>
+  <msg key="user_add_confirm_email_body">An account has been created for you on %system_name% at %system_url%.
+
+You may use your MyUni Key to login to %system_name%.
+
+OR if you don't have a MyUni Key, you may login with the following login details:
+
+Login: %user_username%
+Password: %user_password%</msg>
   <msg key="help_enter_valid_username">Enter a valid username.  The username will be used to create the dotfolio space.</msg>
   <msg key="successfully_created_dotfolio">Successfully created a dotfolio space for %username%</msg>
   <msg key="error_creating_dotfolio">Error creating a dotfolio space for %username%</msg>
@@ -63,6 +70,7 @@
   <msg key="become_this_user">Become this user</msg>
   <msg key="update_password">Update Password</msg>
   <msg key="confirm">Confirm</msg>
+  <msg key="manage_users_portrait">Manage user's portrait</msg>
   <msg key="new_password">New Password</msg>
   <msg key="need_to_confirm">You need to confirm the password that you typed.  (Type the same password again.)</msg>
   <msg key="passwords_dont_match">Your passwords don't match!  Presumably, you made a typing error while entering one of them.</msg>
@@ -125,14 +133,14 @@ Message: %message%
 </msg>
   <msg key="registered_user_welcome_email_body">%first_names% %last_name%,
 
-You have been added as a user to %system_name%
-at %system_url%
+An account has been created for you on %system_name% at %system_url%
 
-Login information:
-Email %email%
+You may use your MyUni Key to login to %system_name%.
+
+OR if you don't have a MyUni Key, you may login with the following login details:
+
+Username: %username%
 Password: %password%
-
-(you may change your password after you log in)
 
 Thank you
 %administration_name%
@@ -140,6 +148,7 @@ Thank you
   <msg key="subject_membership_has_been_approved">Your %system_name% membership has been approved.</msg>
   <msg key="message_membership_has_been_approved">Your %system_name% membership has been approved.  Please return to %system_url% to log into %system_name%.</msg>
   <msg key="has_dotfolio_space">dotFOLIO Space</msg>
+  <msg key="no_portfolios_in_section">There are no portfolios for this section.</msg>
   <msg key="default_welcome_note">{Welcome to %first_names% %last_name%'s portfolio!} text/enhanced</msg>
   <msg key="num_of_blog_entries">No. of Blog Entries</msg>
 

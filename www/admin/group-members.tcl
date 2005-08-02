@@ -14,7 +14,7 @@ ad_page_contract {
 
 set context_bar "[_ dotfolio.group_members_curly]"
 
-set group_name [db_string group_name {} -default ""]
+set group_name [lang::util::localize [db_string group_name {} -default ""]]
 
 db_multirow group_members group_members {}
 

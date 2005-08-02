@@ -22,10 +22,12 @@ if {![dotfolio::user_p -user_id $user_id]} {
 
 set root_object_id [acs_magic_object security_context_root]
 
-set adviser_p [dotfolio::user::adviser_p $user_id]
+# Determine the type of dotfolio user.
+set type_adviser_p [dotfolio::user::type_adviser_p -user_id $user_id]
+set type_admin_p [dotfolio::user::type_admin_p -user_id $user_id]
 
 # If user is not adviser then do some redirection.
-if {!$adviser_p} {
+if {!$type_adviser_p && !$type_admin_p} {
 
     # If user has a dotfolio, then redirect to the location of the dotfolio.
     # Otherwise redirect user back to index with message.

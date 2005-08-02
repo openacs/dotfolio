@@ -38,6 +38,7 @@ ad_page_contract {
     id:onevalue
     password:onevalue
     administration_name:onevalue
+    username:onevalue
 }
 
 # Get user info
@@ -49,7 +50,7 @@ foreach var_name [array names user] {
 
 set dotfolio_user_p [dotfolio::user_p -user_id $user_id]
 
-set redirect "user-add-2?[export_vars {user_id password referer type can_browse_p read_private_data_p add_membership_p}]"
+set redirect "user-add-2?[export_vars {user_id password referer type can_browse_p read_private_data_p add_membership_p username}]"
 # Don't redirect back to the user-add-type page if we've already been there
 if {!$dotfolio_user_p} {
     set redirect "${redirect}"

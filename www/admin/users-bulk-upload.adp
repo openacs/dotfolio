@@ -78,7 +78,7 @@
 
   <pre>
     first_names,last_name,email,username,password,type
-    Joe,Student,joe@_somewhere_.net,joestue,4jfe3,student
+    Joe,Student,joe@_somewhere_.net,joestue,4jfe3,owner
     Albert,Einstein,al@_school_.edu,al,,adviser
     Systems,Hacker,syshacker@_company_.com,syshackr,,guest
   </pre>

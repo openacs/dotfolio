@@ -204,4 +204,72 @@ namespace eval dotfolio::user {
 	return $rel_id
     }
 
+    ad_proc -public get_user_type {
+        {-user_id:required}
+    } {
+        Returns the user type for the given user.
+
+	@param user_id The ID for a specific user.
+	@return Returns the user type for the specified user.
+    } {
+	return [db_string user_type {} -default ""]
+    }
+
+    ad_proc type_owner_p {
+        {-user_id:required}
+    } {
+	Checks if the specified user is of type "owner".
+
+	@param user_id A user's user_id.
+	@return Returns 1 if the user is of type owner, otherwise 1
+	is returned.
+    } {
+	set type [get_user_type -user_id $user_id]
+
+        return [expr [string equal $type "owner"] ]
+    }
+
+    ad_proc type_adviser_p {
+        {-user_id:required}
+    } {
+	Checks if the specified user is of type "adviser".
+
+	@param user_id A user's user_id.
+	@return Returns 1 if the user is of type adviser, otherwise 1
+	is returned.
+    } {
+	set type [get_user_type -user_id $user_id]
+
+        return [expr [string equal $type "adviser"] ]
+    }
+
+    ad_proc type_admin_p {
+        {-user_id:required}
+    } {
+	Checks if the specified user is of type "admin".  Provides the same
+	result as admin_p, except that this proc is implemented differently.
+
+	@param user_id A user's user_id.
+	@return Returns 1 if the user is of type admin, otherwise 1
+	is returned.
+    } {
+	set type [get_user_type -user_id $user_id]
+
+        return [expr [string equal $type "admin"] ]
+    }
+
+    ad_proc type_guest_p {
+        {-user_id:required}
+    } {
+	Checks if the specified user is of type "guest".
+
+	@param user_id A user's user_id.
+	@return Returns 1 if the user is of type guest, otherwise 1
+	is returned.
+    } {
+	set type [get_user_type -user_id $user_id]
+
+        return [expr [string equal $type "guest"] ]
+    }
+
 }
