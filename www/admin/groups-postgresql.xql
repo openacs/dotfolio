@@ -11,6 +11,7 @@
         FROM groups, dotfolio_group_adviser_map, dotfolio_users
 	WHERE groups.group_id = dotfolio_group_adviser_map.group_id
 	AND dotfolio_group_adviser_map.adviser_id = dotfolio_users.user_id
+        ORDER BY groups.group_id ASC
     </querytext>
   </fullquery>
 
