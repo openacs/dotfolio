@@ -30,6 +30,7 @@
 	  WHERE g.member_id NOT IN (SELECT member_id
 	      FROM group_member_map WHERE group_id = :group_id)
 	  GROUP BY d.user_id, d.last_name, d.first_names, pretty_type
+	  ORDER BY name ASC
     </querytext>
   </fullquery>
 
