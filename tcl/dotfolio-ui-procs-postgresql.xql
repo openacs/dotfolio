@@ -8,4 +8,12 @@
     </querytext>
   </fullquery>
 
+  <fullquery name="dotfolio::ui::is_content_folder_p.object_type">
+    <querytext>
+      SELECT object_type FROM acs_objects
+	WHERE object_id = :object_id
+        AND object_type = 'content_folder'
+    </querytext>
+  </fullquery>
+
 </queryset>

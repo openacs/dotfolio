@@ -59,4 +59,22 @@ namespace eval dotfolio::ui {
 	}
 	return 0
     }
+
+    ad_proc is_content_folder_p {
+        -object_id
+    } {
+        Returns t if the object is a content folder.
+	Otherwise returns f.
+
+	@param object_id The ID of an object.
+    } {
+	if {[db_0or1row object_type {}] && \
+		[string equal $object_type {content_folder}]} {
+
+	    return 1
+	}
+
+	return 0
+    }
+
 }
