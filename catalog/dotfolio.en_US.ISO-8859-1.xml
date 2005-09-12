@@ -24,10 +24,6 @@
   <msg key="user_add_confirm_email_subject">You have been added as a user to %system_name% at %system_url%</msg>
   <msg key="user_add_confirm_email_body">An account has been created for you on %system_name% at %system_url%.
 
-You may use your MyUni Key to login to %system_name%.
-
-OR if you don't have a MyUni Key, you may login with the following login details:
-
 Login: %user_username%
 Password: %user_password%</msg>
   <msg key="help_enter_valid_username">Enter a valid username.  The username will be used to create the dotfolio space.</msg>
