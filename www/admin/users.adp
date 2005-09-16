@@ -23,7 +23,7 @@
 [<small>
   <a href="user-add?referer=@referer@"><small>#dotfolio.create_a_new_user#</small></a> 
   |
-  <a href="users-search"><small>#dotfolio.search_users#</small></a>
+  <a href="search-users"><small>#dotfolio.search_users#</small></a>
   |
   <a href="users-bulk-upload"><small>#dotfolio.bulk_upload#</small></a>
 </small>]

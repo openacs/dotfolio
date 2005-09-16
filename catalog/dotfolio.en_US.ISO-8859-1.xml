@@ -46,6 +46,7 @@ Password: %user_password%</msg>
   <msg key="dotfolio_props_for">dotFOLIO properties for this user.</msg>
   <msg key="email">Email</msg>
   <msg key="return_to">Return to</msg>
+  <msg key="user_search">User Search</msg>
   <msg key="some_of_the_emails_failed">Some of the emails failed. Those users had random passwords generated for them, however. The best way to proceed is to have these users log in and ask them to click on 'I have forgotten my password'.</msg>
   <msg key="database_choked">&lt;p&gt;Database error while trying to create the last user in the list above!&lt;br&gt; The transaction has been aborted, no users have been entered, and no e-mail notifications have been sent.&lt;p&gt;</msg>
   <msg key="screen_name">Screen name</msg>
@@ -83,6 +84,9 @@ Password: %user_password%</msg>
   <msg key="creating_user">Creating user</msg>
   <msg key="create_a_new_user">Create A New User</msg>
   <msg key="search_users">Search Users</msg>
+  <msg key="search">Search</msg>
+  <msg key="search_results">Search Results</msg>
+  <msg key="search_help_text">Search for users by entering a name or email.</msg>
   <msg key="bulk_upload">Bulk Upload</msg>
   <msg key="bulk_uploading">Bulk uploading in progress.</msg>
   <msg key="upload">Upload</msg>
@@ -93,6 +97,7 @@ Password: %user_password%</msg>
   <msg key="create_several_users_at_once">Here you can create several users at once using a correctly formatted CSV (comma-separated values) file.  You can create a spreadsheet and save it as a CSV file to import here.</msg>
   <msg key="use_valid_email_address">Be sure to use valid email addresses since the process will send the new user's password to the given email address.</msg>
   <msg key="no_users">No Users</msg>
+  <msg key="no_users_found">No users found</msg>
   <msg key="fields">Fields</msg>
   <msg key="required">Required</msg>
   <msg key="upload_formatted_csv">Upload Formatted CSV File</msg>
