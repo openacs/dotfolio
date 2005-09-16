@@ -131,9 +131,7 @@ Message: %message%
 
 An account has been created for you on %system_name% at %system_url%
 
-You may use your MyUni Key to login to %system_name%.
-
-OR if you don't have a MyUni Key, you may login with the following login details:
+You may login to %system_name% with the following login details:
 
 Username: %username%
 Password: %password%
