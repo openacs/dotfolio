@@ -152,5 +152,7 @@ Thank you
   <msg key="num_of_blog_entries">No. of Blog Entries</msg>
   <msg key="continue_with_delete_group">Continue with deleting this group?</msg>
   <msg key="delete_group">Delete group</msg>
+  <msg key="remove_members">Remove members</msg>
+  <msg key="remove_members_are_you_sure">Are you sure you want to remove these members from group &quot;%group_name%&quot;?</msg>
 
 </message_catalog>
