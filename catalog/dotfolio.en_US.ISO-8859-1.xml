@@ -150,5 +150,7 @@ Thank you
   <msg key="no_portfolios_in_section">There are no portfolios for this section.</msg>
   <msg key="default_welcome_note">{Welcome to %first_names% %last_name%'s portfolio!} text/enhanced</msg>
   <msg key="num_of_blog_entries">No. of Blog Entries</msg>
+  <msg key="continue_with_delete_group">Continue with deleting this group?</msg>
+  <msg key="delete_group">Delete group</msg>
 
 </message_catalog>
