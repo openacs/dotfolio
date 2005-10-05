@@ -131,7 +131,7 @@ namespace eval dotfolio::user {
 
 	@param user_id A user's user_id.
     } {
-        return [db_0or1row adviser_p {}]
+        return [string equal [db_string adviser_p {}] t]
     }
 
     ad_proc dotfolio_url {
