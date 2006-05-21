@@ -16,13 +16,13 @@
         <maturity>0</maturity>
 
         <provides url="dotfolio" version="0.3"/>
-        <requires url="acs-kernel" version="5.2.0d2"/>
+        <requires url="acs-kernel" version="5.2.0d10"/>
         <requires url="clipboard" version="0.1d"/>
         <requires url="dotfolio-ui" version="0.3"/>
-        <requires url="file-storage" version="5.1.0a15"/>
-        <requires url="lars-blogger" version="2.1.1"/>
+        <requires url="file-storage" version="5.1.0a17"/>
+        <requires url="lars-blogger" version="2.2.0d2"/>
         <requires url="related-items" version="0.1d"/>
-        <requires url="user-profile" version="2.1.0a2"/>
+        <requires url="user-profile" version="2.1.1"/>
         <requires url="views" version="0.1d"/>
 
         <callbacks>
