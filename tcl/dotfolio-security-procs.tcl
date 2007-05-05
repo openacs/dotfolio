@@ -58,6 +58,14 @@ namespace eval dotfolio {
         return [db_string select_count {}]
     }
 
+    ad_proc -public dotfolio_p {
+        {-user_id:required}
+    } {
+        Check if a user has a dotfolio created
+    } {
+        return [db_string dotfolio_count {} -default 0]
+    }
+
     ad_proc -public get_user_types_as_options {
 	{-ignore_guest "false"}
 } {

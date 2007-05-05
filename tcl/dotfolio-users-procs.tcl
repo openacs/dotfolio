@@ -142,7 +142,7 @@ namespace eval dotfolio::user {
 	@param user_id A user's user_id.
 	@return Returns the url of the user's dotfolio
     } {
-        return [db_string dotfolio_url {} -default ""]
+	return [site_node::get_url -node_id [db_string dotfolio_url {} -default ""]]
     }
 
     ad_proc get_user_id_from_username {
@@ -204,7 +204,20 @@ namespace eval dotfolio::user {
 	return $rel_id
     }
 
+    
+    
     ad_proc -public get_user_type {
+        {-user_id:required}
+    } {
+        Returns the user type for the given user.
+
+	@param user_id The ID for a specific user.
+	@return Returns the user type for the specified user.
+    } {
+	return [util_memoize [list dotfolio::user::get_user_type_not_cached -user_id $user_id]]
+    }
+
+    ad_proc -public get_user_type_not_cached {
         {-user_id:required}
     } {
         Returns the user type for the given user.

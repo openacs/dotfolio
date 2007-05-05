@@ -18,13 +18,6 @@
       </querytext>
 </fullquery>
  
-  <fullquery name="dotfolio::create_dotfolio_for_user.set_live">
-    <querytext>
-      UPDATE cr_items SET live_revision=latest_revision
-          WHERE item_id=:welcome_content_id
-    </querytext>
-  </fullquery>
-
   <fullquery name="dotfolio::create_dotfolio_for_user.get_users_names">
     <querytext>
       SELECT first_names, last_name FROM dotfolio_users

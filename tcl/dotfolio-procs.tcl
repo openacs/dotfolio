@@ -62,6 +62,7 @@ namespace eval dotfolio {
 
     ad_proc -public create_dotfolio_for_user {
 	{-username:required}
+	{-owner_id ""}
     } {
 	Creates a dotfolio space for the a user with the specified username.
 
@@ -89,15 +90,19 @@ namespace eval dotfolio {
 	    # set the mount location for dotfolio-ui
 	    set organise_url "$base_url/organise"
 
+	    set dotfolio_xml [parameter::get -parameter DotfolioXML -package_id [package_id_from_key dotfolio]]
 	    set out [apm::process_install_xml \
-			 /packages/dotfolio/lib/install.xml \
+			 $dotfolio_xml
 			 [list base_url $base_url \
 			      name $username \
 			      blog_url $blog_url \
 			      files_url $files_url \
 			      organise_url $organise_url]]
 
-	    set owner_id [acs_user::get_by_username -username $username]
+	    if {$owner_id eq ""} {
+		set owner_id [acs_user::get_by_username -username $username]
+	    }
+
 	    set node_id [site_node::get_node_id -url $base_url]
 	    array set node_info [site_node::get -node_id $node_id]
 	    set package_id $node_info(package_id)
@@ -125,10 +130,9 @@ namespace eval dotfolio {
 		-parent_id $folder_id \
 		-title "$first_names $last_name" \
 		-text [_ dotfolio.default_welcome_note] \
-		-storage_type "text"]
+		-storage_type "text" \
+		-is_live]
 
-	    db_dml set_live {}
-    
 	    # Add the owner as a member of their dotfolio.
 	    set group_id [application_group::group_id_from_package_id \
 			      -package_id $package_id]
@@ -158,11 +162,16 @@ namespace eval dotfolio {
 
 	    # Give dotfolio owner write and delete permissions for their files.
 	    array set files_node_info [site_node::get -url $files_url]
-	    set files_id $files_node_info(object_id)
-	    permission::grant -party_id $owner_id -object_id $files_id \
-		-privilege "write"
-	    permission::grant -party_id $owner_id -object_id $files_id \
-		-privilege "delete"
+
+	    # If the package_key is not file storage, the file storage
+	    # was not mounted, which might be due to not using it in install.xml
+	    if {$files_node_info(package_key) eq "file-storage"} {
+		set files_id $files_node_info(object_id)
+		permission::grant -party_id $owner_id -object_id $files_id \
+		    -privilege "write"
+		permission::grant -party_id $owner_id -object_id $files_id \
+		    -privilege "delete"
+	    }
 
 	    # Do not let organiser node inherit permisisons.  Only the
 	    # owner should have access to the organise tab.
@@ -174,6 +183,7 @@ namespace eval dotfolio {
 	    permission::grant -party_id $owner_id -object_id $organise_id \
 		-privilege "admin"
 
+	    callback dotfolio::create_dotfolio -base_url $base_url
 	    db_exec_plsql create_dotfolio {}
 
 	    # Set success flag to 1 to reflect successful creation of

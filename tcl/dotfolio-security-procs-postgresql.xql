@@ -13,6 +13,15 @@
     </querytext>
   </fullquery>
 
+
+  <fullquery name="dotfolio::dotfolio_p.dotfolio_count">
+    <querytext>
+	SELECT 1
+          FROM dotfolios
+          WHERE owner_id = :user_id
+    </querytext>
+  </fullquery>
+
   <fullquery name="dotfolio::get_user_types_as_options.select_user_types_as_options_without_guest">
     <querytext>
       SELECT pretty_name, type

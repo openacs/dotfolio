@@ -21,6 +21,7 @@
 	  WHERE a.object_id_two = c.item_id
 	  AND a.object_id_one = :owner_id
 	  AND a.rel_type = 'user_portrait_rel'
+	  order by item_id desc limit 1
     </querytext>
   </fullquery>
 
@@ -40,10 +41,9 @@
 
   <fullquery name="dotfolio::user::dotfolio_url.dotfolio_url">
     <querytext>
-      SELECT site_node__url(d.node_id) AS url
-          FROM dotfolio_users du LEFT OUTER JOIN dotfolios d
-	  ON du.user_id = d.owner_id
-	      WHERE du.user_id = :user_id
+      SELECT node_id
+          FROM dotfolios d
+	      WHERE owner_id = :user_id
     </querytext>
   </fullquery>
 
@@ -61,7 +61,7 @@
     </querytext>
   </fullquery>
 
-  <fullquery name="dotfolio::user::get_user_type.user_type">
+  <fullquery name="dotfolio::user::get_user_type_not_cached.user_type">
     <querytext>
       SELECT type
           FROM dotfolio_users
