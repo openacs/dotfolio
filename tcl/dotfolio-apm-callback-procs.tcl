@@ -31,13 +31,11 @@ namespace eval dotfolio::install {
 }
 
 ad_proc -public -callback dotfolio::create_dotfolio {
-} {
-    -blog_id
     -base_url
+    -owner_id
 } {
     Callback to execute actions on the mounted dotfolio after the regular operations have already happend
     
-    @param blog_id Blog ID of the Weblog instantiated
     @param base_url URL where the dotfolio is based
+    @param owner_id User ID of the owner of the new dotfolio
 } -
-

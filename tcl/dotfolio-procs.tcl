@@ -90,9 +90,10 @@ namespace eval dotfolio {
 	    # set the mount location for dotfolio-ui
 	    set organise_url "$base_url/organise"
 
-	    set dotfolio_xml [parameter::get -parameter DotfolioXML -package_id [package_id_from_key dotfolio]]
+	    set dotfolio_xml [parameter::get -parameter DotfolioXML -package_id [apm_package_id_from_key dotfolio]]
+	    ns_log Notice "dotfolio:: $dotfolio_xml"
 	    set out [apm::process_install_xml \
-			 $dotfolio_xml
+			 $dotfolio_xml \
 			 [list base_url $base_url \
 			      name $username \
 			      blog_url $blog_url \
@@ -131,7 +132,7 @@ namespace eval dotfolio {
 		-title "$first_names $last_name" \
 		-text [_ dotfolio.default_welcome_note] \
 		-storage_type "text" \
-		-is_live]
+		-is_live "1"]
 
 	    # Add the owner as a member of their dotfolio.
 	    set group_id [application_group::group_id_from_package_id \
@@ -183,7 +184,7 @@ namespace eval dotfolio {
 	    permission::grant -party_id $owner_id -object_id $organise_id \
 		-privilege "admin"
 
-	    callback dotfolio::create_dotfolio -base_url $base_url
+	    callback dotfolio::create_dotfolio -base_url $base_url -owner_id $owner_id
 	    db_exec_plsql create_dotfolio {}
 
 	    # Set success flag to 1 to reflect successful creation of
