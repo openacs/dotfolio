@@ -13,7 +13,7 @@
         <summary>dotFOLIO is an ePortfolio application.</summary>
         <vendor url="http://www.weg.ee.usyd.edu.au">WEG</vendor>
         <description format="text/html">dotFOLIO is used to administer ePortfolio spaces mounted as subsites.</description>
-        <maturity>0</maturity>
+        <maturity>4</maturity>
 
         <provides url="dotfolio" version="0.4d1"/>
         <requires url="acs-kernel" version="5.3.1"/>
