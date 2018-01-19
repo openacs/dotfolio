@@ -34,4 +34,5 @@ ad_form \
     } \
     -after_submit {
         ad_returnredirect "groups"
+	ad_script_abort
     }
