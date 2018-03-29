@@ -34,7 +34,7 @@ ad_proc -public -callback dotfolio::create_dotfolio {
     -base_url
     -owner_id
 } {
-    Callback to execute actions on the mounted dotfolio after the regular operations have already happend
+    Callback to execute actions on the mounted dotfolio after the regular operations have already happened
     
     @param base_url URL where the dotfolio is based
     @param owner_id User ID of the owner of the new dotfolio
