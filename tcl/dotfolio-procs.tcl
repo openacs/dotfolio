@@ -18,7 +18,7 @@ namespace eval dotfolio {
 	@see dotfolio::packages
     } {
 	# need to strip nodes which have no mounted package...
-	set packages {}
+	set packages [list]
 	foreach package [site_node::get_children -all -node_id $node_id -element package_id] {
 	    if {![empty_string_p $package]} {
 		lappend packages $package
