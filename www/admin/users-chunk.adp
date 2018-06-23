@@ -49,7 +49,7 @@
 
 <if @oacs_site_wide_admin_p@ true and @guest_p@ false>
 
-  <if @users.has_dotfolio_p@ true>
+  <if @users.has_dotfolio_p;literal@ true>
     <td align="center"><a href="@users.url@">#dotfolio.yes#</a></td>
   </if>
   <else>
@@ -58,7 +58,7 @@
 
  <td align="center">
   <if @user_id@ ne @users.user_id@>
-    <if @users.site_wide_admin_p@ true>
+    <if @users.site_wide_admin_p;literal@ true>
       <b>#dotfolio.yes#</b> | <a href="site-wide-admin-toggle?user_id=@users.user_id@&value=revoke&referer=@referer@" title="#dotfolio.revoke_site_wide_admin#">#dotfolio.no#</a>
     </if>
     <else>

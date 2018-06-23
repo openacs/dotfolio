@@ -27,7 +27,7 @@
   <li>
     #dotfolio.name#
     @first_names@ @last_name@
-  <if @oacs_site_wide_admin_p@ true> 
+  <if @oacs_site_wide_admin_p;literal@ true> 
     [<small> <a href="/user/basic-info-update?@export_edit_vars@">#dotfolio.edit#</a> </small>]
   </if>
   </li>
@@ -40,7 +40,7 @@
   <li>
     #dotfolio.email#
     <a href="mailto:@email@">@email@</a>
-  <if @oacs_site_wide_admin_p@ true>
+  <if @oacs_site_wide_admin_p;literal@ true>
     [<small> <a href="/user/basic-info-update?@export_edit_vars@">#dotfolio.edit#</a> </small>]
   </if> 
   </li>
@@ -48,7 +48,7 @@
   <li>
     #dotfolio.screen_name#:
     @screen_name;noquote@
-  <if @oacs_site_wide_admin_p@ true>
+  <if @oacs_site_wide_admin_p;literal@ true>
     [<small> <a href="/user/basic-info-update?@export_edit_vars@">#dotfolio.edit#</a> </small>]
   </if>
   </li>
@@ -75,7 +75,7 @@
   </li>
 </else>
 
-<if @portrait_p@ eq 1>
+<if @portrait_p;literal@ true>
   <li>
     #dotfolio.portrait#: <a href="/shared/portrait?user_id=@user_id@">@portrait_title@</a>
   </li>
@@ -84,7 +84,7 @@
   <li>
     #dotfolio.member_state#
     @member_state@
-  <if @oacs_site_wide_admin_p@ true> 
+  <if @oacs_site_wide_admin_p;literal@ true> 
     @change_state_links;noquote@
   </if>
   </li>
@@ -97,7 +97,7 @@
 
 <h3>#dotfolio.dotfolio_info#</h3>
 
-<if @dotfolio_user_p@>
+<if @dotfolio_user_p;literal@ true>
 
 <ul>
 
@@ -130,7 +130,7 @@
 
 <ul>
   <li><a href="password-update?@export_edit_vars@">#dotfolio.update_users_passwd#</a></li>
-  <if @portrait_p@>
+  <if @portrait_p;literal@ true>
     <li><a href="/user/portrait/index.tcl?@export_edit_vars@">#dotfolio.manage_users_portrait#</a></li>
   </if>
  <if @oacs_site_wide_admin_p@ true or @dotfolio_admin_p@ true>

@@ -14,7 +14,7 @@
       <td id="portal-column-content">
         <div class="visualPadding">
           <div class="documentBorder">
-            <if @admin_p@ eq "1">
+            <if @admin_p;literal@ true>
             <div class="portletOptions">
               @options;noquote@
             </div>
