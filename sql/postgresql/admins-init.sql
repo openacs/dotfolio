@@ -43,7 +43,7 @@ begin
         ''profiled_group'',
         null,
         0,
-        null,
+        null::integer,
         ''user'',
         null,
         0,
